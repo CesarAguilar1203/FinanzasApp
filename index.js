@@ -9,6 +9,10 @@
   const emailcorrecto = '1';
   const passwordcorrecto = '1';
   const signup = document.getElementById('registrar')
+  const spanSignUp = document.getElementById('r1')
+  spanSignUp.addEventListener("click", () => {
+    window.location.href = "registro.html"; // Página del formulario de "Sign Up"
+  });
   // Validar al hacer clic en "Sign In"
   botonVerificar.addEventListener('click', function (e) {
     e.preventDefault(); // Evita que se recargue la página
@@ -44,7 +48,5 @@
     e.preventDefault();
     contenido.style.display = "block";
   });
-spanSignUp.addEventListener("click", () => {
-  window.location.href = "registro.html"; // Página del formulario de "Sign Up"
-});
+
 });

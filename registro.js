@@ -1,18 +1,3 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js';
-import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAb-77V0LWm3R_RRL4-LqWSUT2nLr_usnQ",
-  authDomain: "bd-pgw.firebaseapp.com",
-  projectId: "bd-pgw",
-  storageBucket: "bd-pgw.firebasestorage.app",
-  messagingSenderId: "1051963078622",
-  appId: "1:1051963078622:web:b6562282b8aac52dc68f4f",
-  measurementId: "G-4HDS0507V7"
-};
-
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
 
 document.addEventListener('DOMContentLoaded', function () {
   const nombre = document.getElementById('nombre1');
@@ -26,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault(); // Evitar recarga de página
 
     // Validar campos vacíos
-    if (!nombre.value || !apellido.value || !correo.value || !contraseña.value) {
+    if (!nombre.value || !correo.value || !contraseña.value) {
       alert("Todos los campos son obligatorios.");
       return;
     }

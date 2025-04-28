@@ -2,55 +2,34 @@
 <html lang="en">
 <script src="index.js"></script>
 <link rel="stylesheet" href="registro.css">
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registrate</title>
 </head>
-<style>
-    body {
-      background-color: rgb(250, 92, 0); /* Fondo de color */
-      background-image: url('raul2.jpg'); /* Fondo con imagen */
-      background-size: cover; /* Escala de imagen */
-      background-position: center; /* Posición de imagen */
-      background-repeat: no-repeat; /* Evita que la imagen se repita */
-    }
-  </style>
+
 
 <body>
-<form class="form">
-    <p class="title">Register </p>
-    <p class="message">Signup now and get full access to our app. </p>
-        <div class="flex" id="nombre1">
-        <label>
-            <input class="input" type="text" placeholder="" required="">
-            <span>PrimerNombre</span>
-        </label>
-
-        <label>
-            <input class="input" type="text" placeholder="" required=""id="nombre2">
-            <span>Apellidos</span>
-        </label>
-    </div>  
-            
-    <label>
-        <input class="input" type="email" placeholder="" required="" id='rcorreo'>
-        <span>Correo</span>
-    </label> 
-        
-    <label>
-        <input class="input" type="password" placeholder="" required="" id="rcontraseña">
-        <span>Contraseña</span>
-    </label>
-    <label>
-        <input class="input" type="password" placeholder="" required="" id="rconfirmar">
-        <span>Confirmar Contraseña</span>
-    </label>
-    <button class="submit" id="rboton">Registrar</button>
-    <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
-</form>
+    <video class="video-background" autoplay muted loop>
+        <source src="fondo 3.mp4" type="video/mp4">
+      </video>
+<!-- From Uiverse.io by alexruix --> 
+<div class="form-box">
+    <form class="form">
+        <span class="title">Registrate</span>
+        <span class="subtitle">Crea una cuenta usando tu correo electronico.</span>
+        <div class="form-container">
+          <input type="text" class="input" placeholder="Nombre Completo">
+                <input type="email" class="input" placeholder="Correo">
+                <input type="password" class="input" placeholder="Contraseña">
+        </div>
+        <button>Registrar</button>
+    </form>
+    <div class="form-section">
+      <p>Ya tienes cuenta? <a href="" id="iniciars">Iniciar sesion</a> </p>
+      <script src="index.js"></script>
+    </div>
+    </div>
 </body>
 
 </html>
