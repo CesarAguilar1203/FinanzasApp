@@ -10,6 +10,10 @@
   const passwordcorrecto = '1';
   const signup = document.getElementById('registrar')
   const spanSignUp = document.getElementById('r1')
+  const olvide = document.getElementById('cont')
+  olvide.addEventListener("click", () => {
+    window.location.href = "recuperar.html"; // Página del formulario de "Sign Up"
+});
   spanSignUp.addEventListener("click", () => {
     window.location.href = "registro.html"; // Página del formulario de "Sign Up"
   });
