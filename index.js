@@ -11,6 +11,7 @@
   const signup = document.getElementById('registrar')
   const spanSignUp = document.getElementById('r1')
   const olvide = document.getElementById('cont')
+  
   olvide.addEventListener("click", () => {
     window.location.href = "recuperar.html"; // Página del formulario de "Sign Up"
 });
