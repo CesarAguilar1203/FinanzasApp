@@ -1,10 +1,54 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-  }
+
+
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+}
   
+
+
+
+
+.div6 {
+  grid-column: span 2 / span 2;
+  grid-row: span 3 / span 3;
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.div7 {
+  grid-column: span 2 / span 2;
+  grid-row: span 4 / span 4;
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.div8 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.div9 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 4;
+}
+
+.div10 {
+  grid-column-start: 5;
+  grid-row-start: 6;
+}
+
+.div11 {
+  grid-row: span 3 / span 3;
+  grid-column-start: 5;
+  grid-row-start: 1;
+}
+      
 
   
   .dashboard {
@@ -16,25 +60,25 @@
   .top3-header {
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
   
   .user-icon3 {
     background: #e0f0ec;
-    padding: 10px;
+    padding: px;
     border-radius: 50%;
   }
   
   .summary-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
     margin-bottom: 30px;
   }
   
   .card {
     background: #fff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
@@ -76,7 +120,7 @@
   .transactions ul,
   .accounts ul {
     list-style: none;
-    margin-top: 10px;
+
   }
   
   .transactions li,
@@ -92,5 +136,10 @@
   
   .negative {
     color: red;
+  }
+  #contenedor {
+    width: 800px;
+    height: 400px;
+    margin: 20px auto;
   }
   

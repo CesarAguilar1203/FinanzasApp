@@ -1,4 +1,8 @@
-
+.main-layout {
+  display: flex;
+  transition: all 0.3s ease;
+  height: 100vh;
+}
 .hidden {
     display: none; /* Oculta el elemento */
   }
@@ -13,9 +17,12 @@
 }
 body {
   min-height: 100vh;
-  background: linear-gradient(#F1F3FF, #CBD4FF);
+  background: linear-gradient(#031269, #757373);
 }
 .sidebar {
+  width: 250px;
+  min-width: 250px;
+  background-color: #333;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +30,19 @@ body {
   width: 270px;
   height: 100vh;
   background: #151A2D;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
+}
+.sidebar.hidden {
+  transform: translateX(-100%);
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.seccion {
+
+  flex-grow: 1;
+  padding: 10px;
+  transition: margin-left 0.3s ease-in-out;
 }
 .sidebar.collapsed {
   width: 85px;

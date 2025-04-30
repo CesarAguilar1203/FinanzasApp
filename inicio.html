@@ -1,183 +1,318 @@
-
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inicio</title>
+
+  <!-- Estilos externos -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
   <link rel="stylesheet" href="inicio.css">
   <link rel="stylesheet" href="movimientos.css">
   <link rel="stylesheet" href="menu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet"
-   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+
+  <!-- Estilos para layout push -->
+  <style>
+    .contenedor {
+      width: 100%;
+      height: 300px;
+      /* puedes ajustar según tu diseño */
+      max-width: 100%;
+    }
+
+    .main-layout {
+      display: flex;
+      height: 100vh;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar {
+      width: 250px;
+      min-width: 250px;
+      background-color: #333;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar.hidden {
+      width: 0;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      transition: margin-left 0.3s ease;
+      padding: 20px;
+    }
+
+    .sidebar-menu-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 999;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #hover-area {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 10px;
+      z-index: 998;
+    }
+  </style>
 </head>
+
 <body>
 
-  <div class="navbar">
-    <a class="nav-link active" href="#" onclick="mostrarSeccion('inicio')">
-      <i class="fa fa-fw fa-home"></i> Inicio
-    </a>
-    <a class="nav-link" href="#" onclick="mostrarSeccion('correo')">
-      <i class="fa fa-fw fa-envelope"></i> Correo
-    </a>
-    <a class="nav-link" href="#" onclick="mostrarSeccion('usuario')">
-      <i class="fa fa-fw fa-user"></i> Usuario
-    </a>
-  </div>
-
-  <!-- Contenedor de secciones -->
-  <div id="correo" class="seccion" style="display: none;">Aquí puedes ver tus correos.</div>
-  <div id="usuario" class="seccion" style="display: none;">Información de usuario.</div>
-  <div id="menu" class="seccion"> 
-    <section class="summary-cards">
-    <div class="card">
-      <h3>Total Balance</h3>
-      <p>$25,200</p>
-    </div>
-    <div class="card">
-      <h3>Income</h3>
-      <p class="income">+10,500 <span>↑15.7%</span></p>
-    </div>
-    <div class="card">
-      <h3>Expenses</h3>
-      <p class="expenses">4,200 <span>↓2.3%</span></p>
-    </div>
-    <div class="card">
-      <h3>Savings</h3>
-      <p>$18,500</p>
-    </div>
-  </section>
-
-  <section class="content">
-    <div class="chart">
-      <h3>Income vs Expenses</h3>
-      <img src="https://via.placeholder.com/400x200?text=Chart" alt="Chart" />
-    </div>
-
-    <div class="transactions">
-      <h3>Latest Transactions</h3>
-      <ul>
-        <li><span>🛒 Online Store</span><span class="negative">-120.00</span></li>
-        <li><span>💼 Salary</span><span class="positive">+3,500.00</span></li>
-        <li><span>🏠 Rent</span><span class="negative">-1,200.00</span></li>
-        <li><span>🍽 Restaurant</span><span class="negative">-50.00</span></li>
-      </ul>
-    </div>
-
-    <div class="accounts">
-      <h3>Account Balance</h3>
-      <ul>
-        <li>🟢 Checking: $10,000</li>
-        <li>🟣 Savings: $8,500</li>
-        <li>💳 Credit Card: $1,200</li>
-      </ul>
-    </div>
-  </section>
-</main>
-</div></div>
-  <div id="calendario" class="seccion" style="display: none;">Contenido del Calendario.</div>
-  <div id="notificaciones" class="seccion" style="display: none;">Contenido de Notificaciones.</div>
-  <div id="noticias" class="seccion" style="display: none;">Contenido de Noticias.</div>
-  <div id="movimientos" class="seccion" style="display: none;">Contenido de Movimientos.
-    <div class="añadirmovimiento">
-    <form action="/action_page.php">
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
-    
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-    
-      <label for="country">Country</label>
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
-    
-      <input type="submit" value="Submit">
-    </form>
-    </div>
-
-  </div>
-</div>
-<div class="div5"></div>
-<div class="div6"> </div>
-  <div id="configuracion" class="seccion" style="display: none;">Contenido de Configuración.</div>
-  <div id="ayuda" class="seccion" style="display: none;">Contenido de Ayuda.</div>
-  <div id="cerrar_sesion" class="seccion" style="display: none;">Cerrar Sesión.</div>
-
-  <!-- Mobile Sidebar Menu Button -->
+  <!-- Botón para abrir sidebar (móvil) -->
   <button class="sidebar-menu-button">
     <span class="material-symbols-rounded">menu</span>
   </button>
   <div id="hover-area"></div>
 
-  <aside class="sidebar">
-    <header class="sidebar-header" id="esconder">
-      <a href="#" class="header-logo">
-        <img src="12.jpeg" alt="Logo">
-      </a>
-      <button class="sidebar-toggler">
-        <span class="material-symbols-rounded">chevron_left</span>
-      </button>
-    </header>
-    <nav class="sidebar-nav">
-      <ul class="nav-list primary-nav">
-        <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarSeccion('menu')">
-            <span class="material-symbols-rounded">menu</span>
-            <span class="nav-label">Menú</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarSeccion('calendario')">
-            <span class="material-symbols-rounded">calendar_today</span>
-            <span class="nav-label">Calendario</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarSeccion('notificaciones')">
-            <span class="material-symbols-rounded">notifications</span>
-            <span class="nav-label">Notificaciones</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarSeccion('noticias')">
-            <span class="material-symbols-rounded">local_library</span>
-            <span class="nav-label">Noticias</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarSeccion('movimientos')">
-            <span class="material-symbols-rounded">star</span>
-            <span class="nav-label">Movimientos</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarSeccion('configuracion')">
-            <span class="material-symbols-rounded">settings</span>
-            <span class="nav-label">Configuración</span>
-          </a>
-        </li>
-      </ul>
+  <!-- LAYOUT PRINCIPAL -->
+  <div class="main-layout">
 
-      <ul class="nav-list secondary-nav">
-        <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarSeccion('ayuda')">
-            <span class="material-symbols-rounded">help</span>
-            <span class="nav-label">Ayuda</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link" onclick="mostrarSeccion('cerrar_sesion')">
-            <span class="material-symbols-rounded">logout</span>
-            <span class="nav-label">Cerrar Sesión</span>
-          </a>
-        </li>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <header class="sidebar-header" id="esconder">
+        <a href="#" class="header-logo">
+          <img src="12.jpeg" alt="Logo">
+        </a>
+        <button class="sidebar-toggler">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </button>
+      </header>
+
+      <nav id="barraizquierda" class="sidebar-nav">
+        <ul class="nav-list primary-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-seccion='menu'>
+              <span class="material-symbols-rounded">menu</span>
+              <span class="nav-label">Menú</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-seccion='calendario'>
+              <span class="material-symbols-rounded">calendar_today</span>
+              <span class="nav-label">Calendario</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-seccion='notificaciones'>
+              <span class="material-symbols-rounded">notifications</span>
+              <span class="nav-label">Notificaciones</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-seccion='noticias'>
+              <span class="material-symbols-rounded">local_library</span>
+              <span class="nav-label">Noticias</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-seccion='movimientos'>
+              <span class="material-symbols-rounded">star</span>
+              <span class="nav-label">Movimientos</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-seccion='configuracion'>
+              <span class="material-symbols-rounded">settings</span>
+              <span class="nav-label">Configuración</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="nav-list secondary-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-seccion='ayuda'>
+              <span class="material-symbols-rounded">help</span>
+              <span class="nav-label">Ayuda</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-seccion='cerrar_sesion'>
+              <span class="material-symbols-rounded">logout</span>
+              <span class="nav-label">Cerrar Sesión</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id="mainContent" class="main-content">
+      <div class="navbar">
+        <a class="nav-link active" href="#" onclick="mostrarSeccion('inicio')">
+          <i class="fa fa-fw fa-home"></i> Inicio
+        </a>
+        <a class="nav-link" href="#" onclick="mostrarSeccion('correo')">
+          <i class="fa fa-fw fa-envelope"></i> Correo
+        </a>
+        <a class="nav-link" href="#" onclick="mostrarSeccion('usuario')">
+          <i class="fa fa-fw fa-user"></i> Usuario
+        </a>
+      </div>
+
+
+
+      <!-- SECCIONES -->
+      <div id="correo" class="seccion" style="display: none;">Aquí puedes ver tus correos.</div>
+      <div id="usuario" class="seccion" style="display: none;">Información de usuario.</div>
+
+      <div id="menu" class="seccion">
+        <section class="summary-cards">
+          <div class="div1">
+            <div class="card">
+              <h3>Total Balance</h3>
+              <p>$25,200</p>
+            </div>
+          </div>
+          <div class="div2">
+            <div class="card">
+              <h3>Income</h3>
+              <p class="income">+10,500 <span>↑15.7%</span></p>
+            </div>
+          </div>
+          <div class="div3">
+            <div class="card">
+              <h3>Expenses</h3>
+              <p class="expenses">4,200 <span>↓2.3%</span></p>
+            </div>
+          </div>
+          <div class="div4"></div>
+          <div class="card">
+            <h3>Savings</h3>
+            <p>$18,500</p>
+          </div>
+      </div>
+      </section>
+
+
+
+      <section class="content">
+        <div id="contenedor" class="contenedor">
+          <h3>Income vs Expenses</h3>
+          <script>
+            // FUNCIONES Y GRÁFICO TODO EN EL MISMO HTML
+            windows.addEventListener('DOMContentLoaded', () => {
+            let randomFactor = 25 + Math.random() * 25;
+
+            const samplePoint = i =>
+              i * (
+                0.5 +
+                Math.sin(i / 10) * 0.2 +
+                Math.sin(i / 20) * 0.4 +
+                Math.sin(i / randomFactor) * 0.8 +
+                Math.sin(i / 500) * 0.5
+              ) + 200;
+
+            function generateLineData(numberOfPoints = 100) {
+              randomFactor = 25 + Math.random() * 25;
+              const res = [];
+              const date = new Date(Date.UTC(2022, 0, 1));
+              for (let i = 0; i < numberOfPoints; ++i) {
+                const time = Math.floor(date.getTime() / 1000);
+                const value = samplePoint(i);
+                res.push({ time, value });
+                date.setUTCDate(date.getUTCDate() + 1);
+              }
+              return res;
+            }
+
+            const chart = LightweightCharts.createChart(document.getElementById('contenedor'), {
+              layout: {
+                textColor: 'black',
+                background: { type: 'solid', color: 'white' },
+              },
+            });
+
+            const ingresos = chart.addLineSeries({ color: '#4CAF50' });
+            const gastos = chart.addLineSeries({ color: '#F44336' });
+            const ahorros = chart.addLineSeries({ color: '#2196F3' });
+
+            ingresos.setData(generateLineData());
+            gastos.setData(generateLineData());
+            ahorros.setData(generateLineData());
+
+            chart.timeScale().fitContent();
+
+            window.addEventListener('resize', () => {
+              chart.resize(
+                document.getElementById('contenedor').clientWidth,
+                document.getElementById('contenedor').clientHeight
+            
+              );
+            });
+          </script>
+
+        </div>
+    </div>
+    <div class="transactions">
+      <h3>Ultimas Transacciones</h3>
+      <ul>
+        <li><span>🛒 Amazon</span><span class="negative">-120.00</span></li>
+        <li><span>💼 Salario</span><span class="positive">+3,500.00</span></li>
+        <li><span>🏠 Renta</span><span class="negative">-1,200.00</span></li>
+        <li><span>🍽 Restaurante</span><span class="negative">-50.00</span></li>
       </ul>
-    </nav>
-  </aside>
+    </div>
+
+    <div class="accounts">
+      <h3>Balance</h3>
+      <ul>
+        <li>🟢 Cheques: $10,000</li>
+        <li>🟣Efectivo: $8,500</li>
+        <li>💳 Targeta Credito: $1,200</li>
+      </ul>
+    </div>
+    </section>
+  </div>
+
+  <main id="calendario" class="seccion" style="display: none;">Contenido del Calendario.</main>
+  <div id="notificaciones" class="seccion" style="display: none;">Contenido de Notificaciones.</div>
+  <div id="noticias" class="seccion" style="display: none;">Contenido de Noticias.</div>
+
+  <div id="movimientos" class="seccion" style="display: none;">
+    Contenido de Movimientos.
+    <div class="añadirmovimiento">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+  <div id="configuracion" class="seccion" style="display: none;">Contenido de Configuración.</div>
+  <div id="ayuda" class="seccion" style="display: none;">Contenido de Ayuda.</div>
+  <div id="cerrar_sesion" class="seccion" style="display: none;">Cerrar Sesión.</div>
+  </div> <!-- Fin main-content -->
+  </div>
+  </div> <!-- Fin main-layout -->
+
   <script src="inicio.js" defer></script>
 </body>
 
