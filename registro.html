@@ -13,22 +13,24 @@
     <video class="video-background" autoplay muted loop>
         <source src="fondo 3.mp4" type="video/mp4">
       </video>
-<!-- From Uiverse.io by alexruix --> 
-<div class="form-box">
-    <form class="form">
-        <span class="title">Registrate</span>
-        <span class="subtitle">Crea una cuenta usando tu correo electronico.</span>
-        <div class="form-container">
-          <input type="text" class="input" placeholder="Nombre Completo">
-                <input type="email" class="input" placeholder="Correo">
-                <input type="password" class="input" placeholder="Contraseña">
+      <div class="form-box">
+        <form class="form" method="post" action="registro.php">
+          <span class="title">Registrate</span>
+          <span class="subtitle">Crea una cuenta usando tu correo electronico.</span>
+          <div class="form-container">
+              <input type="text" class="input" name="nombre" placeholder="Nombre Completo">
+              <input type="email" class="input" name="email" placeholder="Correo">
+              <input type="password" class="input" name="password" placeholder="Contraseña">
+          </div>
+          <div id="mensaje" class="mensaje"></div>
+          <button type="submit" name="registrar">Registrar</button>
+        </form>
+      
+        <div class="form-section">
+          <p>¿Ya tienes cuenta? <a href="#" id="iniciars">Iniciar sesión</a></p>
         </div>
-        <button>Registrar</button>
-    </form>
-    <div class="form-section">
-      <p>Ya tienes cuenta? <a href="#" id="iniciars">Iniciar sesion</a> </p>
-    </div>
-    </div>
+      </div>
+      
 </body>
 
 </html>
