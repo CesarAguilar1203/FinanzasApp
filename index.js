@@ -1,57 +1,17 @@
-
-  
-  document.addEventListener('DOMContentLoaded', function () {
-  const formulario = document.getElementById('loginform');
-  const correo = document.getElementById('email');
-  const contraseña = document.getElementById('password');
-  const botonVerificar = document.getElementById('boton');
-  const mensaje = document.getElementById('mensaje');
-  const emailcorrecto = '1';
-  const passwordcorrecto = '1';
-  const signup = document.getElementById('registrar')
-  const spanSignUp = document.getElementById('r1')
-  const olvide = document.getElementById('cont')
-  
-  olvide.addEventListener("click", () => {
-    window.location.href = "recuperar.html"; // Página del formulario de "Sign Up"
-});
-  spanSignUp.addEventListener("click", () => {
-    window.location.href = "registro.html"; // Página del formulario de "Sign Up"
-  });
-  // Validar al hacer clic en "Sign In"
-  botonVerificar.addEventListener('click', function (e) {
-    e.preventDefault(); // Evita que se recargue la página
-
-    if (correo.value === emailcorrecto && contraseña.value === passwordcorrecto) {
-      mensaje.textContent = '¡Acceso permitido! Bienvenido, César.';
-      mensaje.style.color = 'green';
-      botonVerificar.addEventListener("click", () => {
-        window.location.href = "inicio.html"; // Página del formulario de "Sign Up"
+document.addEventListener('DOMContentLoaded', function () {
+  const signup = document.getElementById('r1'); // ✅ Registro
+  const olvide = document.getElementById('cont'); // Recuperar contraseña
+  // Redirección al formulario de recuperación de contraseña
+  if (olvide) {
+      olvide.addEventListener("click", () => {
+          window.location.href = "recuperar.html"; 
       });
-    } else {
-      mensaje.textContent = 'Error: Correo o contraseña incorrectos.';
-      mensaje.style.color = 'red';
-    }
-  });
+  }
 
-  // Evitar recarga al presionar "Enter"
-  correo.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      botonVerificar.click();
-    }
-  });
-
-  contraseña.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      botonVerificar.click();
-    }
-  });
-
-  signup.addEventListener('click', function (e){
-    e.preventDefault();
-    contenido.style.display = "block";
-  });
-
+  // ✅ Redirección al formulario de registro
+  if (signup) {
+      signup.addEventListener("click", () => {
+          window.location.href = "registro.html";
+      });
+  }
 });

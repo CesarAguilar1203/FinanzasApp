@@ -1,34 +1,27 @@
-
 document.addEventListener('DOMContentLoaded', function () {
-  const registrar = document.getElementById('rboton');
-  const inicia = document.getElementById('iniciars')
-  inicia.addEventListener("click", () => {
-    window.location.href = "index.html"; // Página del formulario de "Sign Up"
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("registroForm");
-  const mensaje = document.getElementById("mensaje");
+    const registrar = document.getElementById('rboton');  // Botón de registro
+    const inicia = document.getElementById('iniciars');  // Botón para iniciar sesión
+    const form = document.getElementById('registroForm');  // Formulario de registro
+    const mensaje = document.getElementById('mensaje');  // Mensaje (si es necesario)
 
-  form.addEventListener("submit", function (e) {
-      e.preventDefault(); // evita recargar
+    // Redirige al formulario de inicio de sesión cuando se hace clic en 'iniciars'
+    if (inicia) {
+        inicia.addEventListener("click", () => {
+            window.location.href = "index.html"; // Página del formulario de inicio de sesión
+        });
+    }
 
-      const datos = new FormData(form);
+    // Manejo del envío del formulario
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();  // Evita la recarga de la página
 
-      fetch("registro.php", {
-          method: "POST",
-          body: datos
-      })
-      .then(res => res.text())
-      .then(data => {
-          mensaje.innerHTML = data;
+            const datos = new FormData(form);
 
-          if (data.includes("✅")) {
-              form.reset(); // limpia el formulario si fue exitoso
-          }
-      })
-      .catch(() => {
-          mensaje.innerHTML = "<p style='color:red'>❌ Error de conexión</p>";
-      });
-  });
-});
+            // Aquí puedes manejar los datos del formulario (enviarlos a un servidor o procesarlos)
+            console.log(datos);  // Muestra los datos en la consola para ver si está funcionando
+
+            // Si todo está bien, puedes enviar los datos con fetch, AJAX o alguna otra técnica.
+        });
+    }
 });

@@ -9,14 +9,13 @@ if (
 ) {
     $name = trim($_POST['nombre']);
     $email = trim($_POST['email']);
-    $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT); // Seguridad
+    $password = trim($_POST['password']); // Sin hash
 
-    $consulta = "INSERT INTO usuarios(nombre, email, password) VALUES ('$name', '$email','$password')";
+    $consulta = "INSERT INTO usuarios(nombre, email, password) VALUES ('$name', '$email', '$password')";
     $resultado = mysqli_query($conexion, $consulta);
 
     if ($resultado) {
-        // Redirige a otro archivo HTML después de un registro exitoso
-        header("Location: index.html"); // Aquí coloca la página a la que quieras redirigir
+        header("Location: index.html"); // Página de redirección tras el registro
         exit();
     } else {
         echo "<p style='color:red'>❌ Error al registrar</p>";
